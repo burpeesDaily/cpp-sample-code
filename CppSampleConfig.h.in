@@ -1,0 +1,3 @@
+// the configured options and settings for C++ Sample Code
+#define CppSample_VERSION_MAJOR @CppSample_VERSION_MAJOR@
+#define CppSample_VERSION_MINOR @CppSample_VERSION_MINOR@
