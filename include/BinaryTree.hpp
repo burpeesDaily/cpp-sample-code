@@ -13,10 +13,7 @@ namespace CppSampleCode
     class Node
     {
     public:
-        Node(int32_t key, const std::any &data)
-            : key{key}, data{data}
-        {
-        }
+        Node(int32_t key, const std::any &data) : key{key}, data{data} {}
 
         ~Node() = default;
 
@@ -50,15 +47,9 @@ namespace CppSampleCode
 
         virtual size_t getHeight(const Node_p &node) const = 0;
 
-        Node_p getRoot() const
-        {
-            return root;
-        }
+        Node_p getRoot() const { return root; }
 
-        bool empty() const
-        {
-            return (!root) ? true : false;
-        }
+        bool empty() const { return (!root) ? true : false; }
 
     protected:
         Node_p root;

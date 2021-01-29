@@ -2,8 +2,8 @@
 // Licensed under MIT License.
 // See LICENSE in the project root for license information.
 
-#include <any>
 #include <algorithm>
+#include <any>
 
 #include "BinarySearchTree.hpp"
 #include "TreeException.hpp"
@@ -122,7 +122,7 @@ namespace CppSampleCode
         return parent;
     }
 
-    void BinarySearchTree::transplant(Node_p &deletingNode, Node_p &replacingNode)
+    void BinarySearchTree::transplant(Node_p deletingNode, Node_p replacingNode)
     {
         if (!deletingNode->parent)
         {

@@ -2,6 +2,8 @@
 // Licensed under MIT License.
 // See LICENSE in the project root for license information.
 
+#pragma once
+
 #include <any>
 
 #include "BinaryTree.hpp"
@@ -28,7 +30,7 @@ namespace CppSampleCode
         size_t getHeight(const Node_p &node) const override;
 
     private:
-        void transplant(Node_p &deletingNode, Node_p &replacingNode);
+        void transplant(Node_p deletingNode, Node_p replacingNode);
     };
 
     using BinarySearchTree_p = std::shared_ptr<BinarySearchTree>;
