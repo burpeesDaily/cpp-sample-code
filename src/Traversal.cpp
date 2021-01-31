@@ -106,7 +106,8 @@ namespace CppSampleCode
 
                         if (!current->right)
                         {
-                            //std::cout << "(" << current->key << ", " << current->data << ")" << std::endl;
+                            // std::cout << "(" << current->key << ", " << current->data
+                            // << ")" << std::endl;
                             output.emplace_back(current->key, current->data);
                             current = nullptr;
                             continue;
@@ -117,7 +118,8 @@ namespace CppSampleCode
                             {
                                 if (current->right == tempStack.top())
                                 {
-                                    //std::cout << "(" << current->key << ", " << current->data << ")" << std::endl;
+                                    // std::cout << "(" << current->key << ", " <<
+                                    // current->data << ")" << std::endl;
                                     output.emplace_back(current->key, current->data);
                                     current = nullptr;
                                 }
@@ -141,7 +143,7 @@ namespace CppSampleCode
         {
             PostOrderTraverseRecursive(root->left, output);
             PostOrderTraverseRecursive(root->right, output);
-            //std::cout << "(" << root->key << ", " << root->data << ")" << std::endl;
+            // std::cout << "(" << root->key << ", " << root->data << ")" << std::endl;
             output.emplace_back(root->key, root->data);
         }
     }
@@ -180,7 +182,8 @@ namespace CppSampleCode
                     }
                     else
                     { // current->right is not nullprt
-                        //std::cout << "(" << current->key << ", " << current->data << ")" << std::endl;
+                        // std::cout << "(" << current->key << ", " << current->data <<
+                        // ")" << std::endl;
                         output.emplace_back(current->key, current->data);
                         current = nullptr;
                     }
@@ -193,7 +196,8 @@ namespace CppSampleCode
                         tempStack.pop();
                         if (current->right == nullptr)
                         {
-                            //std::cout << "(" << current->key << ", " << current->data << ")" << std::endl;
+                            // std::cout << "(" << current->key << ", " << current->data
+                            // << ")" << std::endl;
                             output.emplace_back(current->key, current->data);
                             current = nullptr;
                         }
@@ -203,7 +207,8 @@ namespace CppSampleCode
                             {
                                 if (current->right != tempStack.top())
                                 {
-                                    //std::cout << "(" << current->key << ", " << current->data << ")" << std::endl;
+                                    // std::cout << "(" << current->key << ", " <<
+                                    // current->data << ")" << std::endl;
                                     output.emplace_back(current->key, current->data);
                                     current = nullptr;
                                 }
@@ -217,7 +222,8 @@ namespace CppSampleCode
                             }
                             else
                             { // tempStack is empty
-                                //std::cout << "(" << current->key << ", " << current->data << ")" << std::endl;
+                                // std::cout << "(" << current->key << ", " <<
+                                // current->data << ")" << std::endl;
                                 output.emplace_back(current->key, current->data);
                                 break;
                             }
@@ -245,7 +251,8 @@ namespace CppSampleCode
             tempQueue.pop();
             if (node)
             {
-                //std::cout << "(" << node->key << ", " << node->data << ")" << std::endl;
+                // std::cout << "(" << node->key << ", " << node->data << ")" <<
+                // std::endl;
                 output.emplace_back(node->key, node->data);
                 if (node->left)
                 {

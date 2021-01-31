@@ -10,9 +10,10 @@
 
 namespace CppSampleCode
 {
+
     class Node
     {
-    public:
+      public:
         Node(int32_t key, const std::any &data) : key{key}, data{data} {}
 
         ~Node() = default;
@@ -28,7 +29,7 @@ namespace CppSampleCode
 
     class BinaryTree
     {
-    public:
+      public:
         virtual ~BinaryTree() = default;
 
         virtual Node_p search(int32_t key) const = 0;
@@ -51,7 +52,7 @@ namespace CppSampleCode
 
         bool empty() const { return (!root) ? true : false; }
 
-    protected:
+      protected:
         Node_p root;
     };
 
