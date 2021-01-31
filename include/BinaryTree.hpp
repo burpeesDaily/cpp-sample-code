@@ -21,7 +21,7 @@ namespace CppSampleCode
          * @param key an integer to identify the node
          * @param data any data the node stores
          */
-        Node(int32_t key, const std::any &data) : key{key}, data{data} {}
+        Node(int32_t key, std::any &data) : key{key}, data{std::move(data)} {}
 
         ~Node() = default;
 
