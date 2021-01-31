@@ -12,7 +12,7 @@ namespace CppSampleCode
 {
     class BinarySearchTree : public BinaryTree
     {
-    public:
+      public:
         Node_p search(int32_t key) const override;
 
         void insertNode(int32_t key, const std::any &data) override;
@@ -29,7 +29,7 @@ namespace CppSampleCode
 
         size_t getHeight(const Node_p &node) const override;
 
-    private:
+      private:
         void transplant(Node_p deletingNode, Node_p replacingNode);
     };
 
