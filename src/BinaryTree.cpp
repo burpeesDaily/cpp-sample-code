@@ -42,7 +42,7 @@ namespace CppSampleCode
 
   bool checkBalance(const BinaryTree_p &tree)
   {
-    TraversalOutput inorderOutput = InOrderTraverse(tree);
+    TraversalOutput inorderOutput = inOrderTraverse(tree);
 
     for (size_t index = 0; index < inorderOutput.size() - 1; ++index)
     {

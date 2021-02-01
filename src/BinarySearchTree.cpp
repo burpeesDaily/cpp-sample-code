@@ -31,7 +31,7 @@ namespace CppSampleCode
         return nullptr;
     }
 
-    void BinarySearchTree::insertNode(int32_t key, const std::any &data)
+    void BinarySearchTree::insertNode(int32_t key, std::any data)
     {
         Node_p node = std::make_shared<Node>(key, data);
 
@@ -44,7 +44,8 @@ namespace CppSampleCode
             {
                 throw DuplicateKeyException(key);
             }
-            else if (node->key < current->key)
+
+            if (node->key < current->key)
             {
                 current = current->left;
             }
@@ -122,7 +123,7 @@ namespace CppSampleCode
         return parent;
     }
 
-    void BinarySearchTree::transplant(Node_p deletingNode, Node_p replacingNode)
+    void BinarySearchTree::transplant(const Node_p &deletingNode, const Node_p &replacingNode)
     {
         if (!deletingNode->parent)
         {

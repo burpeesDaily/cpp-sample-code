@@ -25,6 +25,12 @@ namespace CppSampleCode
 
         ~Node() = default;
 
+        Node(const Node &other) = default;
+        Node & operator=(const Node &other) = default;
+
+        Node(Node &&other) = default;
+        Node & operator=(Node &&other) = default;
+
         int32_t key;                  //!< The key of the node
         std::any data;                //!< The data of the node
         std::shared_ptr<Node> left;   //!< The pointer points to its left node
@@ -44,7 +50,14 @@ namespace CppSampleCode
     class BinaryTree
     {
       public:
+        BinaryTree() = default;
         virtual ~BinaryTree() = default;
+
+        BinaryTree(const BinaryTree &other) = delete;
+        BinaryTree & operator=(const BinaryTree &other) = delete;
+
+        BinaryTree(BinaryTree &&other) = delete;
+        BinaryTree & operator=(BinaryTree &&other) = delete;
 
         /**
          * Search data based on the given key.
@@ -60,7 +73,7 @@ namespace CppSampleCode
          * @param key an integer key associated with the data.
          * @param data the data to be inserted.
          */
-        virtual void insertNode(int32_t key, const std::any &data) = 0;
+        virtual void insertNode(int32_t key, std::any data) = 0;
 
         /**
          * Delete the node based on the given key.
