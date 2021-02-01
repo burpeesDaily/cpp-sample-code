@@ -8,6 +8,9 @@ configure_file(CppSampleConfig.h.in CppSampleConfig.h)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
+set(CMAKE_CXX_CLANG_TIDY clang-tidy)
+
+
 # Set compiler options
 SET(CMAKE_CXX_FLAGS "-Wall")
 

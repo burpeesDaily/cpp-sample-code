@@ -11,22 +11,22 @@
 namespace CppSampleCode
 {
 
-    void PreOrderTraverseRecursive(const Node_p &root, TraversalOutput &output)
+    void preOrderTraverseRecursive(const Node_p &root, TraversalOutput &output)
     {
         if (root)
         {
             output.emplace_back(root->key, root->data);
-            PreOrderTraverseRecursive(root->left, output);
-            PreOrderTraverseRecursive(root->right, output);
+            preOrderTraverseRecursive(root->left, output);
+            preOrderTraverseRecursive(root->right, output);
         }
     }
 
-    TraversalOutput PreOrderTraverse(const BinaryTree_p &tree, bool isRecursive)
+    TraversalOutput preOrderTraverse(const BinaryTree_p &tree, bool isRecursive)
     {
         TraversalOutput output;
         if (isRecursive)
         {
-            PreOrderTraverseRecursive(tree->getRoot(), output);
+            preOrderTraverseRecursive(tree->getRoot(), output);
         }
         else
         {
@@ -52,17 +52,17 @@ namespace CppSampleCode
         return output;
     }
 
-    void InOrderTraverseRecursive(const Node_p &root, TraversalOutput &output)
+    void inOrderTraverseRecursive(const Node_p &root, TraversalOutput &output)
     {
         if (root)
         {
-            InOrderTraverseRecursive(root->left, output);
+            inOrderTraverseRecursive(root->left, output);
             output.emplace_back(root->key, root->data);
-            InOrderTraverseRecursive(root->right, output);
+            inOrderTraverseRecursive(root->right, output);
         }
     }
 
-    TraversalOutput InOrderTraverse(const BinaryTree_p &tree, bool isRecursive)
+    TraversalOutput inOrderTraverse(const BinaryTree_p &tree, bool isRecursive)
     {
         TraversalOutput output;
         if (tree->empty())
@@ -71,7 +71,7 @@ namespace CppSampleCode
         }
         if (isRecursive)
         {
-            InOrderTraverseRecursive(tree->getRoot(), output);
+            inOrderTraverseRecursive(tree->getRoot(), output);
         }
         else
         {
@@ -106,23 +106,19 @@ namespace CppSampleCode
 
                         if (!current->right)
                         {
-                            //std::cout << "(" << current->key << ", " << current->data << ")" << std::endl;
                             output.emplace_back(current->key, current->data);
                             current = nullptr;
                             continue;
                         }
-                        else
-                        { // current->right is not nullptr
-                            if (!tempStack.empty())
+                        // current->right is not nullptr
+                        if (!tempStack.empty())
+                        {
+                            if (current->right == tempStack.top())
                             {
-                                if (current->right == tempStack.top())
-                                {
-                                    //std::cout << "(" << current->key << ", " << current->data << ")" << std::endl;
-                                    output.emplace_back(current->key, current->data);
-                                    current = nullptr;
-                                }
-                                continue;
+                                output.emplace_back(current->key, current->data);
+                                current = nullptr;
                             }
+                            continue;
                         }
                     }
                     else
@@ -135,18 +131,18 @@ namespace CppSampleCode
         return output;
     }
 
-    void PostOrderTraverseRecursive(const Node_p &root, TraversalOutput &output)
+    void postOrderTraverseRecursive(const Node_p &root, TraversalOutput &output)
     {
         if (root)
         {
-            PostOrderTraverseRecursive(root->left, output);
-            PostOrderTraverseRecursive(root->right, output);
-            //std::cout << "(" << root->key << ", " << root->data << ")" << std::endl;
+            postOrderTraverseRecursive(root->left, output);
+            postOrderTraverseRecursive(root->right, output);
+            // std::cout << "(" << root->key << ", " << root->data << ")" << std::endl;
             output.emplace_back(root->key, root->data);
         }
     }
 
-    TraversalOutput PostOrderTraverse(const BinaryTree_p &tree, bool isRecursive)
+    TraversalOutput postOrderTraverse(const BinaryTree_p &tree, bool isRecursive)
     {
         TraversalOutput output;
         if (tree->empty())
@@ -155,7 +151,7 @@ namespace CppSampleCode
         }
         if (isRecursive)
         {
-            PostOrderTraverseRecursive(tree->getRoot(), output);
+            postOrderTraverseRecursive(tree->getRoot(), output);
         }
         else
         {
@@ -178,12 +174,9 @@ namespace CppSampleCode
                         current = current->left;
                         continue;
                     }
-                    else
-                    { // current->right is not nullprt
-                        //std::cout << "(" << current->key << ", " << current->data << ")" << std::endl;
-                        output.emplace_back(current->key, current->data);
-                        current = nullptr;
-                    }
+                    // current->right is not nullprt
+                    output.emplace_back(current->key, current->data);
+                    current = nullptr;
                 }
                 else
                 { // current is nullprt
@@ -193,7 +186,8 @@ namespace CppSampleCode
                         tempStack.pop();
                         if (current->right == nullptr)
                         {
-                            //std::cout << "(" << current->key << ", " << current->data << ")" << std::endl;
+                            // std::cout << "(" << current->key << ", " << current->data
+                            // << ")" << std::endl;
                             output.emplace_back(current->key, current->data);
                             current = nullptr;
                         }
@@ -203,7 +197,8 @@ namespace CppSampleCode
                             {
                                 if (current->right != tempStack.top())
                                 {
-                                    //std::cout << "(" << current->key << ", " << current->data << ")" << std::endl;
+                                    // std::cout << "(" << current->key << ", " <<
+                                    // current->data << ")" << std::endl;
                                     output.emplace_back(current->key, current->data);
                                     current = nullptr;
                                 }
@@ -217,7 +212,8 @@ namespace CppSampleCode
                             }
                             else
                             { // tempStack is empty
-                                //std::cout << "(" << current->key << ", " << current->data << ")" << std::endl;
+                                // std::cout << "(" << current->key << ", " <<
+                                // current->data << ")" << std::endl;
                                 output.emplace_back(current->key, current->data);
                                 break;
                             }
@@ -229,7 +225,7 @@ namespace CppSampleCode
         return output;
     }
 
-    TraversalOutput LevelOrderTraverse(const BinaryTree_p &tree)
+    TraversalOutput levelOrderTraverse(const BinaryTree_p &tree)
     {
         TraversalOutput output;
         if (tree->empty())
@@ -245,7 +241,6 @@ namespace CppSampleCode
             tempQueue.pop();
             if (node)
             {
-                //std::cout << "(" << node->key << ", " << node->data << ")" << std::endl;
                 output.emplace_back(node->key, node->data);
                 if (node->left)
                 {

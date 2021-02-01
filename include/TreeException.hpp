@@ -12,10 +12,7 @@ namespace CppSampleCode
     class DuplicateKeyException : public std::exception
     {
     public:
-        explicit DuplicateKeyException(int32_t key)
-            : key{key}
-        {
-        }
+        explicit DuplicateKeyException(int32_t key) : key{key} {}
 
         std::string message() const
         {
