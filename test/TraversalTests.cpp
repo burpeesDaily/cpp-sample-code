@@ -1,10 +1,11 @@
-#include "BinarySearchTree.hpp"
-#include "Traversal.hpp"
-
 #include <string>
 #include <vector>
 
 #include <boost/test/unit_test.hpp>
+
+#include "BinarySearchTree.hpp"
+#include "Traversal.hpp"
+
 
 using namespace CppSampleCode;
 
