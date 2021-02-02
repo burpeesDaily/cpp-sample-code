@@ -10,6 +10,6 @@ set(TEST_SOURCES
 
 set(TEST_LIBS CppSample)
 
-add_executable(test_main ${TEST_SOURCES})
-target_link_libraries(test_main ${TEST_LIBS} ${Boost_LIBRARIES})
-add_test(test_main test_main)
+add_executable(test_sample ${TEST_SOURCES})
+target_link_libraries(test_sample ${TEST_LIBS} ${Boost_LIBRARIES})
+add_test(test_sample test_sample)
