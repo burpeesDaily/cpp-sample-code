@@ -1,6 +1,6 @@
 name: Build and Test
 
-os: [push, pul_request]
+on: [push, pul_request]
 
 jobs:
   build:
