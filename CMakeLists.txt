@@ -24,5 +24,5 @@ set(SOURCES
 
 add_library(CppSample STATIC ${SOURCES})
 
-enable_testing()
-add_subdirectory(test)
+#enable_testing()
+#add_subdirectory(test)
