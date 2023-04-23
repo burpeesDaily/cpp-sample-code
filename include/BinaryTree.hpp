@@ -132,7 +132,7 @@ namespace CppSampleCode
         /**
          * @return true if the tree is empty; false otherwise.
          */
-        bool empty() const { return (!root) ? true : false; }
+        bool empty() const { return !root; }
 
       protected:
         Node_p root; //!< The root of the tree. nullptr if the tree is empty.
