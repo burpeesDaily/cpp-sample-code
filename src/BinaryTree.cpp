@@ -13,8 +13,8 @@ namespace CppSampleCode
   bool isBalance(const BinaryTree_p &tree, const Node_p &node)
   {
 
-    int32_t leftHeight = tree->getHeight(node->left);
-    int32_t rightHeight = tree->getHeight(node->right);
+    int64_t leftHeight = tree->getHeight(node->left);
+    int64_t rightHeight = tree->getHeight(node->right);
 
     if (std::abs(leftHeight - rightHeight) > 1)
     {
